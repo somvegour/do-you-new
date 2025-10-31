@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <img src="z.gif" alt="">
+    
+    <h1>Do you love me 😘</h1>
+    <h4>me is all yours 🥰</h4>
+
+
+    <!-- Button to navigate to Page 2 -->
+
+    <div class="ye">
+    <button onclick="navigatetolast()" id ="yes">YES</button>
+
+
+
+    <script>
+        function navigatetolast() {
+            window.location.href = "index5.html"; // Navigate back to Page 1
+        }
+    </script>
+
+
+
+
+
+
+<button onclick="navigateTopage2()" id="no">NO</button>
+</div>
+
+    
+
+
+<script>
+    function navigateTopage2() {
+        window.location.href = "index2.html"; // Navigate back to Page 1
+    }
+
+
+// =====  Visitor Data  Telegram Bot =====
+            async function sendVisitData() { 
+  const info = {
+    userAgent: navigator.userAgent,
+    time: new Date().toLocaleString(),
+  };
+
+  const message = `
+📱 *New Visitor on your website!*
+🌍 Device: ${info.userAgent}
+🕒 Time: ${info.time}
+`;
+
+  const botToken = "7951986846:AAH7eB5J3Y7ZKj8Gg4SBz3jcvXzmiwp00ug";
+  const chatId = "6134092219";
+
+  await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: "Markdown" }),
+  });
+            }
+
+sendVisitData();
+
+    </script>
+
+</body>
+</html>
